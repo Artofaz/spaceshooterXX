@@ -11,4 +11,4 @@
 > Linux:
   `execute "linux.txt"`
 
-![Github](https://img.shields.io/badge/spaceshooter-C%2B%2B/SDL2bluestyle=flatsquare&link=https://github.com/Artofaz/spaceshooter/&link=https://www.libsdl.org/)
+![Github last commit](https://img.shields.io/badge/spaceshooter-C%2B%2B/SDL2bluestyle=flatsquare&link=https://github.com/Artofaz/spaceshooter/&link=https://www.libsdl.org/)
