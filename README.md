@@ -11,4 +11,4 @@
 > Linux:
   `execute "linux.txt"`
 
-![a]([https://img.shields.io/badge/spaceshooter-C%2B%2B/SDL2-blue?style=flat](https://img.shields.io/badge/spaceshooter-C%2B%2B/SDL2-blue?style=flat-square&link=https://github.com/Artofaz/spaceshooter/&link=https://www.libsdl.org/))
+![Github](https://img.shields.io/badge/spaceshooter-C%2B%2B/SDL2bluestyle=flatsquare&link=https://github.com/Artofaz/spaceshooter/&link=https://www.libsdl.org/)
