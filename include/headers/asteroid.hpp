@@ -9,7 +9,8 @@ class Asteroid{
 
     public:
         Asteroid();
-        void updateAsteroid();
+        void updateAsteroid(SDL_Renderer *renderer, SDL_Texture *txr);
+        SDL_Texture* asteroidTexture(SDL_Renderer *renderer);
 
     private:
         SDL_Surface *img;

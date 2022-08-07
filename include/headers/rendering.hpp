@@ -11,7 +11,7 @@ class Rendering{
         void clearRenderer();
         void updateEvents();
         void updateRenderer();
-        void destroyRendering(SDL_Texture *txr, SDL_Surface *srf);
+        void destroyRendering(SDL_Texture *txr, SDL_Texture *ast);
         SDL_Renderer* getRenderer();
         SDL_Window* getWindow();
 

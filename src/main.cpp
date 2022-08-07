@@ -3,6 +3,7 @@
 #include "player.hpp"
 #include "rendering.hpp"
 #include "bullet.hpp"
+#include "asteroid.hpp"
 
 using namespace std;
 
@@ -23,13 +24,14 @@ int main(int argv, char** args){
     //Init player
     Rendering rendering;
     Player player(225, 425);
+    Asteroid asteroid;
 
     vector<Bullet> bl = player.getBullets();
 
     SDL_Renderer *renderer = rendering.getRenderer();
     SDL_Window *window = rendering.getWindow();
     SDL_Texture *playerTxr = player.playerTexture(renderer);
-    SDL_Surface *img = player.getSurface();
+    SDL_Texture *asteroidTxr = asteroid.asteroidTexture(renderer);
 
     while(rendering.running){
 
@@ -47,6 +49,7 @@ int main(int argv, char** args){
             player.attackDelay = 25;
         }
 
+        // asteroid.updateAsteroid(renderer, asteroidTxr);
         player.updatePlayer(renderer, playerTxr);
 
         for(int i = 0; i< bl.size(); i++){
@@ -66,7 +69,7 @@ int main(int argv, char** args){
 
     }
 
-    rendering.destroyRendering(playerTxr, img);
+    rendering.destroyRendering(playerTxr, asteroidTxr);
 
     return 0;
 }

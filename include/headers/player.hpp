@@ -19,7 +19,6 @@ class Player{
         void handleKeyboard();
 
         SDL_Texture* playerTexture(SDL_Renderer *renderer);
-        SDL_Surface* getSurface();
 
         vector<Bullet> getBullets();
         int getPosX();

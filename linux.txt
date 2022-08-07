@@ -1,0 +1,1 @@
+g++ ./src/*.cpp -o main -Iinclude -Iinclude/SDL -Iinclude/headers -lSDL2 -lSDL2main -lSDL2_image

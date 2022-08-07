@@ -93,12 +93,9 @@ void Player::updateDirectionY(int ndirY){
 SDL_Texture* Player::playerTexture(SDL_Renderer *renderer){
     img = IMG_Load("./res/spaceship.png");
     playerTx = SDL_CreateTextureFromSurface(renderer, img);
+    SDL_FreeSurface(img);
 
     return playerTx;
-}
-
-SDL_Surface* Player::getSurface(){
-    return img;
 }
 
 vector<Bullet> Player::getBullets(){
