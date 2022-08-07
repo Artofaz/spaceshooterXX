@@ -5,6 +5,6 @@
 
 > Windows:
   `copy and paste the content of "compile.txt"` 
-  \n
+  "\n"
 > Linux 
   `execute "linux.txt"`
