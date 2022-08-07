@@ -1,5 +1,1 @@
-WITHOUT SDL2_GFX :
 g++ ./src/*.cpp -Iinclude -Iinclude/SDL -Iinclude/headers -Llib -o main -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
-
-WITH SDL2_GFX :
-g++ ./src/*.cpp ./src/*.c -Iinclude -Iinclude/SDL -Iinclude/headers -Llib -o main -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
