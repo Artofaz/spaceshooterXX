@@ -4,6 +4,7 @@
 **COMPILING**
 
 > Windows:
-  `copy and paste the content of "compile.txt"`
+  `copy and paste the content of "compile.txt"` 
+  \n
 > Linux 
   `execute "linux.txt"`
