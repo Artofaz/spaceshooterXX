@@ -7,6 +7,8 @@
 
 > Windows:
   `copy and paste the content of "compile.txt"` 
+    
+  - For windows, all libraries and dll files are included in the project, you just need [mingw32](https://sourceforge.net/projects/mingw-w64/) installed
   
 <br/>
 
