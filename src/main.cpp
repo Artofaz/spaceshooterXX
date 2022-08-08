@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include "player.hpp"
 #include "rendering.hpp"
 #include "bullet.hpp"
@@ -10,9 +11,8 @@ using namespace std;
 
 int main(int argv, char** args){
 
-    // Asteroid asteroids[20];
-
     SDL_Init(SDL_INIT_EVERYTHING);
+    TTF_Init();
 
     //Some frames stuff (https://www.youtube.com/watch?v=jzasDqPmtPI)
     const int FPS = 60;
@@ -32,14 +32,22 @@ int main(int argv, char** args){
     SDL_Renderer *renderer = rendering.getRenderer();
     SDL_Window *window = rendering.getWindow();
     SDL_Texture *playerTxr = player.playerTexture(renderer);
+    TTF_Font * font = TTF_OpenFont("./res/pcsenior.ttf", 10);
 
     //Generic asteroid object
     Asteroid ast;
     SDL_Texture *asteroidTxr = ast.asteroidTexture(renderer);
 
+    SDL_Color color = { 255, 255, 255 };
+    SDL_Surface * surface = TTF_RenderText_Solid(font,
+    "Score:", color);
+    SDL_Rect ds;ds.w=100;ds.h=20;ds.x=5;ds.y=5;
+
+    SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, surface);
+
     while(rendering.running){
 
-        rendering.clearRenderer();
+        rendering.clearRenderer();    
 
         frameStart = SDL_GetTicks();
 
@@ -69,6 +77,7 @@ int main(int argv, char** args){
             as.at(i).updateAsteroid(renderer, asteroidTxr, as);
         };
 
+        SDL_RenderCopy(renderer, texture, NULL, &ds);
         rendering.updateRenderer();
 
         frameTime = SDL_GetTicks() - frameStart;
@@ -81,7 +90,11 @@ int main(int argv, char** args){
         player.asteroidDelay--;
     }
 
-    SDL_DestroyTexture(asteroidTxr);    
+    TTF_CloseFont(font);
+    TTF_Quit();
+    SDL_DestroyTexture(asteroidTxr);  
+    SDL_DestroyTexture(texture);
+    SDL_FreeSurface(surface);  
     rendering.destroyRendering(playerTxr);
 
     return 0;

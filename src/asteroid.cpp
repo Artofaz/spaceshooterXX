@@ -20,7 +20,7 @@ Asteroid::Asteroid(){
 
     int randNum = rand()%(64-32 + 1) + 32; //generate random number btw 16 and 42
     asteroid.x = ( rand()%500 );
-    asteroid.y = 0;
+    asteroid.y = -25;
     asteroid.w = randNum;
     asteroid.h = randNum;
 }
