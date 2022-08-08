@@ -11,15 +11,14 @@ Bullet::Bullet(int px, int py){
     bullet.h = 5;
 }
 
-// Bullet::~Bullet(){
-    // delete &bullet;
-// };
+Bullet::~Bullet(){ };
 
 void Bullet::updateBullet(SDL_Renderer *renderer, vector<Bullet> bl){
     bullet.y -= 5;
 
     if(bullet.y <= 0){
         bl.erase(bl.begin());
+        this->~Bullet();
     }
 
     SDL_SetRenderDrawColor(renderer, 255, 0, 155, 255);

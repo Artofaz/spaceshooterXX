@@ -12,7 +12,8 @@ class Asteroid{
 
     public:
         Asteroid();
-        void updateAsteroid(SDL_Renderer *renderer, SDL_Texture *txr);
+        ~Asteroid();
+        void updateAsteroid(SDL_Renderer *renderer, SDL_Texture *txr, vector<Asteroid> ast);
         SDL_Texture* asteroidTexture(SDL_Renderer *renderer);
         int spawnDelay;
 

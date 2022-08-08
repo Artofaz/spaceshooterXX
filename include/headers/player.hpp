@@ -30,7 +30,7 @@ class Player{
         void setHP();
 
         int attackDelay = 30;
-        int asteroidDelay = 60;
+        int asteroidDelay = 120;
 
     private:
         SDL_Surface *img;

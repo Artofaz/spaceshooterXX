@@ -8,25 +8,6 @@
 
 using namespace std;
 
-// SDL_Renderer *renderer;
-// SDL_Window *window;
-
-// Asteroid asteroid;
-// Asteroid astr;
-// SDL_Texture *asteroidTxr = asteroid.asteroidTexture(renderer);
-
-// vector<SDL_Texture*> astTx;
-
-// int rate = 100;
-
-// void spawnAsteroid(){
-//     Asteroid ast;
-//     SDL_Texture *asteroidTx;
-//     asteroids[qSize] = ast;
-//     // astTx.push_back(asteroidTx);
-//     rate = 100;
-// };
-
 int main(int argv, char** args){
 
     // Asteroid asteroids[20];
@@ -58,8 +39,6 @@ int main(int argv, char** args){
 
     while(rendering.running){
 
-        // rate--;
-
         rendering.clearRenderer();
 
         frameStart = SDL_GetTicks();
@@ -77,33 +56,8 @@ int main(int argv, char** args){
         if(player.asteroidDelay <= 0){
             Asteroid a;
             as.push_back(a);
+            player.asteroidDelay = 120;
         }
-
-        // if(rate <= 0){
-            // cout << "spawn"<< endl;
-            // spawnAsteroid();
-            // for(int i = 0; i < qSize; i++){
-                // cout << i << endl;
-            // }
-        // }
-
-        // for(int i = 0; i < asteroids.size(); i++){
-            // asteroids.at(i).updateAsteroid(renderer, astTx.at(i), asteroids);
-        // }
-
-        // if(qSize != 0){            
-            // asteroids[0].updateAsteroid(renderer, asteroidTxr);
-        // }
-
-
-        // aster = asteroids[0];
-        // ast.updateAsteroid(renderer, asteroidTxr);
-
-        // ast.updateAsteroid(renderer, asteroidTxr);
-        // ast2.updateAsteroid(renderer, asteroidTxr2);
-
-        // asteroid.updateAsteroid(renderer, asteroidTxr, asteroids);
-        // astr.updateAsteroid(renderer, asteroidTxr, asteroids);
 
         player.updatePlayer(renderer, playerTxr);
 
@@ -112,7 +66,7 @@ int main(int argv, char** args){
         };
 
         for(int i = 0; i< as.size(); i++){
-            as.at(i).updateAsteroid(renderer, asteroidTxr);
+            as.at(i).updateAsteroid(renderer, asteroidTxr, as);
         };
 
         rendering.updateRenderer();
@@ -125,10 +79,8 @@ int main(int argv, char** args){
 
         player.attackDelay--;
         player.asteroidDelay--;
-
     }
 
-    // for(int i = 0; i < ; i++){
     SDL_DestroyTexture(asteroidTxr);    
     rendering.destroyRendering(playerTxr);
 

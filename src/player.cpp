@@ -22,6 +22,7 @@ Player::Player(int x, int y){
 }
 
 void Player::updatePlayer(SDL_Renderer *renderer, SDL_Texture *txr){
+
     player.x += dirX * speed;
     player.y += dirY * speed;
 
@@ -80,6 +81,7 @@ void Player::handleKeyboard(){
     else if(keystates[kd] && keystates[kl]){
         speed = 2.5;
     }
+
 };
 
 void Player::updateDirectionX(int ndirX){

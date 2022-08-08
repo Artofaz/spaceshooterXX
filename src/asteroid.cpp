@@ -25,27 +25,28 @@ Asteroid::Asteroid(){
     asteroid.h = randNum;
 }
 
-void Asteroid::updateAsteroid(SDL_Renderer *renderer, SDL_Texture *txr){
+Asteroid::~Asteroid(){ };
+
+void Asteroid::updateAsteroid(SDL_Renderer *renderer, SDL_Texture *txr, vector<Asteroid> ast){
     angle+=5;
     asteroid.x += dirX * speed;
     asteroid.y += dirY * speed;
 
-    // cout << asteroid.x << endl;
-    // cout << asteroid.y << endl;
-    // cout << "stop" << endl;
-
     //CHANGER AST.ERASE PSK CA FONCTIONNE PAS TJRS
 
-    // if(asteroid.x <= 0-asteroid.w){
-        // ast.erase(ast.begin());
-    // }
-    // else if(asteroid.x >= 475 + asteroid.w){
-        // ast.erase(ast.begin());
-    // }
+    if(asteroid.x <= 0-asteroid.w){
+        ast.erase(ast.begin());
+        this->~Asteroid();
+    }
+    else if(asteroid.x >= 475 + asteroid.w){
+        ast.erase(ast.begin());
+        this->~Asteroid();
+    }
 
-    // if(asteroid.y >= 475 + asteroid.h){
-        // ast.erase(ast.begin());
-    // }
+    if(asteroid.y >= 475 + asteroid.h){
+        ast.erase(ast.begin());
+        this->~Asteroid();
+    }
 
     if(angle >= 360){
         angle = 0;

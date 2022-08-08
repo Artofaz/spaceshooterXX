@@ -10,6 +10,7 @@ class Bullet{
 
     public:
         Bullet(int px, int py);
+        ~Bullet();
         void updateBullet(SDL_Renderer *renderer, vector<Bullet> bl);
 
     private:
