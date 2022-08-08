@@ -5,6 +5,7 @@
 #include <SDL/SDL.h>
 #include <vector>
 #include "bullet.hpp"
+#include "asteroid.hpp"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ class Player{
         SDL_Texture* playerTexture(SDL_Renderer *renderer);
 
         vector<Bullet> getBullets();
+        vector<Asteroid> getAsteroids();
         int getPosX();
         int getPosY();
 
@@ -28,6 +30,7 @@ class Player{
         void setHP();
 
         int attackDelay = 30;
+        int asteroidDelay = 60;
 
     private:
         SDL_Surface *img;
@@ -42,7 +45,7 @@ class Player{
         int HP = 3;
 
         vector<Bullet> bullets;
-
+        vector<Asteroid> asteroids;
 };
 
 #endif

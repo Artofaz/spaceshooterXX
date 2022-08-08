@@ -102,6 +102,10 @@ vector<Bullet> Player::getBullets(){
     return bullets;
 }
 
+vector<Asteroid> Player::getAsteroids(){
+    return asteroids;
+}
+
 int Player::getPosX(){
     return player.x;
 }

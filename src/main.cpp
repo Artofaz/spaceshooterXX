@@ -1,5 +1,6 @@
 #include <iostream>
-#include <SDL/SDL.h>
+#include <SDL.h>
+#include <SDL_image.h>
 #include "player.hpp"
 #include "rendering.hpp"
 #include "bullet.hpp"
@@ -7,8 +8,28 @@
 
 using namespace std;
 
+// SDL_Renderer *renderer;
+// SDL_Window *window;
+
+// Asteroid asteroid;
+// Asteroid astr;
+// SDL_Texture *asteroidTxr = asteroid.asteroidTexture(renderer);
+
+// vector<SDL_Texture*> astTx;
+
+// int rate = 100;
+
+// void spawnAsteroid(){
+//     Asteroid ast;
+//     SDL_Texture *asteroidTx;
+//     asteroids[qSize] = ast;
+//     // astTx.push_back(asteroidTx);
+//     rate = 100;
+// };
+
 int main(int argv, char** args){
 
+    // Asteroid asteroids[20];
 
     SDL_Init(SDL_INIT_EVERYTHING);
 
@@ -16,7 +37,6 @@ int main(int argv, char** args){
     const int FPS = 60;
     const int frameDelay = 1000 / FPS;
     Uint32 frameStart;
-    Uint32 framePrevious;
     int frameTime;
 
     const Uint8* keystates = SDL_GetKeyboardState(NULL);
@@ -24,16 +44,21 @@ int main(int argv, char** args){
     //Init player
     Rendering rendering;
     Player player(225, 425);
-    Asteroid asteroid;
 
     vector<Bullet> bl = player.getBullets();
+    vector<Asteroid> as = player.getAsteroids();
 
     SDL_Renderer *renderer = rendering.getRenderer();
     SDL_Window *window = rendering.getWindow();
     SDL_Texture *playerTxr = player.playerTexture(renderer);
-    SDL_Texture *asteroidTxr = asteroid.asteroidTexture(renderer);
+
+    //Generic asteroid object
+    Asteroid ast;
+    SDL_Texture *asteroidTxr = ast.asteroidTexture(renderer);
 
     while(rendering.running){
+
+        // rate--;
 
         rendering.clearRenderer();
 
@@ -49,13 +74,46 @@ int main(int argv, char** args){
             player.attackDelay = 25;
         }
 
-        // asteroid.updateAsteroid(renderer, asteroidTxr);
+        if(player.asteroidDelay <= 0){
+            Asteroid a;
+            as.push_back(a);
+        }
+
+        // if(rate <= 0){
+            // cout << "spawn"<< endl;
+            // spawnAsteroid();
+            // for(int i = 0; i < qSize; i++){
+                // cout << i << endl;
+            // }
+        // }
+
+        // for(int i = 0; i < asteroids.size(); i++){
+            // asteroids.at(i).updateAsteroid(renderer, astTx.at(i), asteroids);
+        // }
+
+        // if(qSize != 0){            
+            // asteroids[0].updateAsteroid(renderer, asteroidTxr);
+        // }
+
+
+        // aster = asteroids[0];
+        // ast.updateAsteroid(renderer, asteroidTxr);
+
+        // ast.updateAsteroid(renderer, asteroidTxr);
+        // ast2.updateAsteroid(renderer, asteroidTxr2);
+
+        // asteroid.updateAsteroid(renderer, asteroidTxr, asteroids);
+        // astr.updateAsteroid(renderer, asteroidTxr, asteroids);
+
         player.updatePlayer(renderer, playerTxr);
 
         for(int i = 0; i< bl.size(); i++){
             bl.at(i).updateBullet(renderer, bl);
         };
 
+        for(int i = 0; i< as.size(); i++){
+            as.at(i).updateAsteroid(renderer, asteroidTxr);
+        };
 
         rendering.updateRenderer();
 
@@ -66,10 +124,13 @@ int main(int argv, char** args){
         }
 
         player.attackDelay--;
+        player.asteroidDelay--;
 
     }
 
-    rendering.destroyRendering(playerTxr, asteroidTxr);
+    // for(int i = 0; i < ; i++){
+    SDL_DestroyTexture(asteroidTxr);    
+    rendering.destroyRendering(playerTxr);
 
     return 0;
 }

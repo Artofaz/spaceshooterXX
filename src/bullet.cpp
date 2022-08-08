@@ -16,7 +16,7 @@ Bullet::Bullet(int px, int py){
 // };
 
 void Bullet::updateBullet(SDL_Renderer *renderer, vector<Bullet> bl){
-    bullet.y -= 2;
+    bullet.y -= 5;
 
     if(bullet.y <= 0){
         bl.erase(bl.begin());

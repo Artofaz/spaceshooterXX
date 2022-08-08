@@ -4,6 +4,9 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <vector>
+
+using namespace std;
 
 class Asteroid{
 
@@ -11,6 +14,7 @@ class Asteroid{
         Asteroid();
         void updateAsteroid(SDL_Renderer *renderer, SDL_Texture *txr);
         SDL_Texture* asteroidTexture(SDL_Renderer *renderer);
+        int spawnDelay;
 
     private:
         SDL_Surface *img;
@@ -21,6 +25,7 @@ class Asteroid{
         int dirX;
         int dirY;
 
+        int angle = 0;
 };
 
 #endif

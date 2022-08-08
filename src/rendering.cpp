@@ -39,8 +39,7 @@ void Rendering::updateRenderer(){
     SDL_RenderPresent(renderer);
 }
 
-void Rendering::destroyRendering(SDL_Texture *txr, SDL_Texture *ast){
-    SDL_DestroyTexture(ast);
+void Rendering::destroyRendering(SDL_Texture *txr){
     SDL_DestroyTexture(txr);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);

@@ -1,6 +1,10 @@
 #include "asteroid.hpp"
 #include <time.h>
 #include <random>
+#include <vector>
+#include <iostream>
+
+using namespace std;
 
 Asteroid::Asteroid(){
     srand(time(0));
@@ -14,17 +18,42 @@ Asteroid::Asteroid(){
 
     speed = (rand() % 2 ) + 1;
 
+    int randNum = rand()%(64-32 + 1) + 32; //generate random number btw 16 and 42
     asteroid.x = ( rand()%500 );
     asteroid.y = 0;
-    asteroid.w = 32;
-    asteroid.h = 32;
+    asteroid.w = randNum;
+    asteroid.h = randNum;
 }
 
 void Asteroid::updateAsteroid(SDL_Renderer *renderer, SDL_Texture *txr){
+    angle+=5;
     asteroid.x += dirX * speed;
     asteroid.y += dirY * speed;
 
-    SDL_RenderCopy(renderer, txr, NULL, &asteroid);
+    // cout << asteroid.x << endl;
+    // cout << asteroid.y << endl;
+    // cout << "stop" << endl;
+
+    //CHANGER AST.ERASE PSK CA FONCTIONNE PAS TJRS
+
+    // if(asteroid.x <= 0-asteroid.w){
+        // ast.erase(ast.begin());
+    // }
+    // else if(asteroid.x >= 475 + asteroid.w){
+        // ast.erase(ast.begin());
+    // }
+
+    // if(asteroid.y >= 475 + asteroid.h){
+        // ast.erase(ast.begin());
+    // }
+
+    if(angle >= 360){
+        angle = 0;
+    }
+
+    SDL_RendererFlip flip = SDL_FLIP_HORIZONTAL;
+    // SDL_RenderCopy(renderer, txr, NULL, &asteroid);
+    SDL_RenderCopyEx(renderer, txr, NULL, &asteroid, angle, NULL, flip);
 }
 
 SDL_Texture* Asteroid::asteroidTexture(SDL_Renderer *renderer){
