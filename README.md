@@ -17,6 +17,9 @@
   ```
   sudo apt-get install libsdl2-2.0-dev
   sudo apt-get install libsdl2-ttf-dev
+  
+  #!Verify that the libraries are installed:
+  apt-cache search libsdl2
   ```
 
 <br/>
