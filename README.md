@@ -15,7 +15,7 @@
 
   - To install SDL2 libraries on a debian-based distro: <br />
   ```
-  sudo apt-get install libsdl1-2.0-dev
+  sudo apt-get install libsdl2-2.0-dev
   sudo apt-get install libsdl2-ttf-dev
   ```
 
