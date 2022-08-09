@@ -3,7 +3,9 @@
 # spaceshooter++
 ## Little arcade-like space shooter game
 
-1. Compiling
+<p align="center" >
+  <a href="#compiling" >Compiling</a>
+</p>
 
 ---
 ## **COMPILING**
