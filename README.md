@@ -1,5 +1,5 @@
 <p align="center" >
-  <img src="https://img.shields.io/badge/spaceshooter%2B%2BC%2B%2B/SDL2bluestyle=flatsquare&link=https://github.com/Artofaz/spaceshooter/&link=https://www.libsdl.org" width=450 height=50 />
+  <img src="https://img.shields.io/badge/spaceshooter++-C++/SDL2-blue?style=square&logo=cplusplus" width=450 height=50 />
 </p>
 
 <h1 align="center" >spaceshooter++</h1>
