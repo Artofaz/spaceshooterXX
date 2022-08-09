@@ -1,7 +1,9 @@
-<img src="https://img.shields.io/badge/spaceshooter%2B%2B-C%2B%2B/SDL2-blue?style=flat-square&link=https://github.com/Artofaz/spaceshooter/&link=https://www.libsdl.org/" width=450 height=50/>
+<p align="center" >
+  <img src="https://img.shields.io/badge/spaceshooter%2B%2BC%2B%2B/SDL2bluestyle=flatsquare&link=https://github.com/Artofaz/spaceshooter/&link=https://www.libsdl.org" width=450 height=50 />
+</p>
 
-# spaceshooter++
-## Little arcade-like space shooter game
+<h1 align="center" >spaceshooter++</h1>
+<h2 align="center" >Little arcade-like space shooter game</h2>
 
 <p align="center" >
   <a href="#compiling" >Compiling</a>
