@@ -3,7 +3,10 @@
 # spaceshooter++
 ## Little arcade-like space shooter game
 
-**COMPILING**
+1. Compiling
+
+---
+## **COMPILING**
 
 > Windows:
   `copy and paste the content of "compile.txt"` 
